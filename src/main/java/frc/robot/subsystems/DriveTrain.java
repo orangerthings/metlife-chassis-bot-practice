@@ -4,31 +4,34 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveTrain extends SubsystemBase {
-  /** Creates a new ExampleSubsystem. */
-  public DriveTrain() {
-    
-  }
+    private final PWMSparkMax m_leftDrive = new PWMSparkMax(0);
+    private final PWMSparkMax m_rightDrive = new PWMSparkMax(0);
 
-  /**
-   * An example method querying a boolean state of the subsystem (for example, a digital sensor).
-   *
-   * @return value of some boolean subsystem state, such as a digital sensor.
-   */
-  public boolean exampleCondition() {
-    // Query some boolean state, such as a digital sensor.
-    return false;
-  }
+    public DriveTrain() {
+    }
 
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-  }
+    /**
+     * An example method querying a boolean state of the subsystem (for example, a
+     * digital sensor).
+     *
+     * @return value of some boolean subsystem state, such as a digital sensor.
+     */
+    public boolean exampleCondition() {
+        // Query some boolean state, such as a digital sensor.
+        return false;
+    }
 
-  @Override
-  public void simulationPeriodic() {
-    // This method will be called once per scheduler run during simulation
-  }
+    @Override
+    public void periodic() {
+        // This method will be called once per scheduler run
+    }
+
+    @Override
+    public void simulationPeriodic() {
+        // This method will be called once per scheduler run during simulation
+    }
 }

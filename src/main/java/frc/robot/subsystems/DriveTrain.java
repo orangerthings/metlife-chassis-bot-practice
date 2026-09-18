@@ -8,15 +8,19 @@ import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveTrain extends SubsystemBase {
-    private final PWMSparkMax m_leftDrive = new PWMSparkMax(0);
-    private final PWMSparkMax m_rightDrive = new PWMSparkMax(5);
+    private final PWMSparkMax m_leftDrive1 = new PWMSparkMax(0); //1 axle shares 2 motors
+    private final PWMSparkMax m_leftDrive2 = new PWMSparkMax(5);
+    private final PWMSparkMax m_rightDrive1 = new PWMSparkMax(19);
+    private final PWMSparkMax m_rightDrive2 = new PWMSparkMax(14);
 
     public DriveTrain() {
     }
 
     public void setDrives(double speed) {
-        m_leftDrive.set(speed);
-        m_rightDrive.set(speed);
+        m_leftDrive1.set(speed);
+        m_leftDrive2.set(speed);
+        m_rightDrive1.set(speed);
+        m_rightDrive2.set(speed);
     }
 
     /**

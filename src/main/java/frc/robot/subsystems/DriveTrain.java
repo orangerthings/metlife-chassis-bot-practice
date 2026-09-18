@@ -9,9 +9,14 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DriveTrain extends SubsystemBase {
     private final PWMSparkMax m_leftDrive = new PWMSparkMax(0);
-    private final PWMSparkMax m_rightDrive = new PWMSparkMax(0);
+    private final PWMSparkMax m_rightDrive = new PWMSparkMax(5);
 
     public DriveTrain() {
+    }
+
+    public void setDrives(double speed) {
+        m_leftDrive.set(speed);
+        m_rightDrive.set(speed);
     }
 
     /**

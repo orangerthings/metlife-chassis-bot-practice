@@ -4,14 +4,15 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.SparkLowLevel.MotorType;
 
 public class DriveTrain extends SubsystemBase {
-    private final PWMSparkMax m_leftDrive1 = new PWMSparkMax(0); //1 axle shares 2 motors
-    private final PWMSparkMax m_leftDrive2 = new PWMSparkMax(5);
-    private final PWMSparkMax m_rightDrive1 = new PWMSparkMax(19);
-    private final PWMSparkMax m_rightDrive2 = new PWMSparkMax(14);
+    private final SparkMax m_leftDrive1 = new SparkMax((13), MotorType.kBrushless);
+    private final SparkMax m_leftDrive2 = new SparkMax((14), MotorType.kBrushless);
+    private final SparkMax m_rightDrive1 = new SparkMax((1), MotorType.kBrushless);
+    private final SparkMax m_rightDrive2 = new SparkMax((12), MotorType.kBrushless);
 
     public DriveTrain() {
     }
